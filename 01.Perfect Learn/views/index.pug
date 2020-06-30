@@ -1,0 +1,170 @@
+extends layouts/base
+block content
+    // section
+    .section.margin-top_50
+    .container
+        .row
+            .col-md-6.layout_padding_2
+                .full
+                .heading_main.text_align_left
+                    h2
+                    span Welcome To
+                    |  Education
+                .full
+                    p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                .full
+                    a.hvr-radial-out.button-theme(href='#') About more
+            .col-md-6
+                .full
+                img(src='images/img2.png' alt='#')
+        // end section
+        // section
+    .section.layout_padding
+    .container
+        .row
+            .col-md-12
+                .full
+                .heading_main.text_align_center
+                    h2
+                    span Popular 
+                    | Courses
+            .col-md-4
+                .full.blog_img_popular
+                img.img-responsive(src='images/p1.png' alt='#')
+                h4 Financial Accounting
+            .col-md-4
+                .full.blog_img_popular
+                img.img-responsive(src='images/p2.png' alt='#')
+                h4 Managerial Accounting
+            .col-md-4
+                .full.blog_img_popular
+                img.img-responsive(src='images/p3.png' alt='#')
+                h4 Intermediate Accounting
+        // end section
+        // section
+    .section.margin-top_50.silver_bg
+    .container
+        .row
+            .col-md-6
+                .full.float-right_img
+                img(src='images/img6.png' alt='#')
+            .col-md-6.layout_padding_2
+                .full
+                .heading_main.text_align_left
+                    h2
+                    span Apply for Admission
+                .full
+                    p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    | in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                    | sunt in culpa qui officia deserunt mollit anim id est laborum
+                .full
+                    a.hvr-radial-out.button-theme(href='#') Apply
+        // end section
+        // section
+    .section.layout_padding.padding_bottom-0
+    .container
+        .row
+            .col-md-6
+                .full
+                .heading_main.text_align_left
+                    h2
+                    span Reaserch
+                .full
+                    p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    | reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                .full
+                    a.hvr-radial-out.button-theme(href='#') See More
+            .col-md-6
+                .full
+                img.img-responsive(src='images/img7.png' alt='#')
+    // end section
+    // section
+    .section.layout_padding.padding_bottom-0
+    .container
+        .row
+        .col-md-12
+            .full
+            .heading_main.text_align_center
+                h2
+                span News
+        .row
+        .col-lg-12
+            #demo.carousel.slide(data-ride='carousel')
+            // The slideshow
+            .carousel-inner
+                .carousel-item.active
+                .row
+                    .col-lg-6.col-md-6.col-sm-12
+                    .full.blog_img_popular
+                        img.img-responsive(src='images/img9.png' alt='#')
+                        h4 Technology
+                        p
+                        | Pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    .col-lg-6.col-md-6.col-sm-12
+                    .full.blog_img_popular
+                        img.img-responsive(src='images/img8.png' alt='#')
+                        h4 Education
+                        p
+                        | Pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                .carousel-item
+                .row
+                    .col-lg-6.col-md-6.col-sm-12
+                    .full.blog_img_popular
+                        img.img-responsive(src='images/img9.png' alt='#')
+                        h4 Technology
+                        p
+                        | Pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    .col-lg-6.col-md-6.col-sm-12
+                    .full.blog_img_popular
+                        img.img-responsive(src='images/img8.png' alt='#')
+                        h4 Education
+                        p
+                        | Pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            // Left and right controls
+            a.carousel-control-prev(href='#demo' data-slide='prev')
+                span.carousel-control-prev-icon
+            a.carousel-control-next(href='#demo' data-slide='next')
+                span.carousel-control-next-icon
+    // end section
+    // section
+    .section.layout_padding.padding_bottom-0
+    .container
+        .row
+        .col-md-12
+            .full
+            .heading_main.text_align_center
+                h2
+                span Contact
+    // end section
+    // section
+    .section.contact_section(style='background:#12385b;')
+    .container
+        .row
+        .col-lg-6.col-md-6.col-sm-12
+            .full.float-right_img
+            img(src='images/img10.png' alt='#')
+        .layout_padding.col-lg-6.col-md-6.col-sm-12
+            .contact_form
+            form(action='contact.html')
+                fieldset
+                .full.field
+                    input(type='text' placeholder='Your Name' name='your name')
+                .full.field
+                    input(type='email' placeholder='Email Address' name='Email')
+                .full.field
+                    input(type='phn' placeholder='Phone Number' name='Phone number')
+                .full.field
+                    textarea(placeholder='Massage')
+                .full.field
+                    .center
+                    button Send
+    // end section
+    // Start Footer

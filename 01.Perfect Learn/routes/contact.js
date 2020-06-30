@@ -9,7 +9,8 @@ router.get("/contact", (req, res, next) => {
   // res.send(
   //   "<h1>Contact page</h1><form method='POST' action='/contact' ><input type='email' name='email' /><button type='submit'>Send</button></form>"
   // );
-  res.sendFile(path.join(rootDir, "views", "contact.html"));
+  // res.sendFile(path.join(rootDir, "views", "contact.html"));
+  res.render("contact");
 });
 
 // router.post("/contact", (req, res, next) => {
