@@ -10,7 +10,8 @@ const contactRoute = require("./routes/contact");
 const aboutRoute = require("./routes/about");
 
 // Middleware
-app.set("view engine", "pug");
+//app.set("view engine", "pug");
+app.set("view engine", "ejs");
 app.set("views", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "static")));
