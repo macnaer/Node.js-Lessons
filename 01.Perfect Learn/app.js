@@ -8,6 +8,7 @@ const app = express();
 const homeRoute = require("./routes/home");
 const contactRoute = require("./routes/contact");
 const aboutRoute = require("./routes/about");
+const courseRoute = require("./routes/course");
 
 // Middleware
 //app.set("view engine", "pug");
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, "static")));
 app.use(homeRoute);
 app.use(contactRoute);
 app.use(aboutRoute);
+app.use(courseRoute);
 app.use((req, res, next) => {
   // res.send("<h1>Page not found</h1>");
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
