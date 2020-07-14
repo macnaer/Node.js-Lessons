@@ -1,10 +1,12 @@
 let data = {
-  title: "Perfect curses",
-  footerText:
-    "footer text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip",
-  address: "London 148 United Kingdom",
-  email: "demo@gmail.com",
-  phone: "+12586954771",
+  title: "Perfect learning",
+  welcomeToEdu: "Loraem ipsum",
+  applyToAdmission: "Lorem ipsum 2",
+  research: "Lorem ipsum 3",
+  footerText: "Fotter text",
+  address: "Riven Riven",
+  phone: "092586221",
+  email: "abkcsd@fgdfg.com",
   date: new Date().getFullYear(),
 };
 module.exports = data;
