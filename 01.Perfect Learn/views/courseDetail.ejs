@@ -2,14 +2,12 @@
 <%- include('layouts/internal-banner.ejs') %>
 <div class="container">
     <div class="row mb-4">
-        <% courses.forEach( course => { %>
         <div class="col-md-4 mt-4">
             <h2 class="course_header mb-2"><%= course.title %></h2>
             <img src="<%= course.image %>" class="img-fluid course_img" alt="<%= course.title %>" />
-            <p class="course_preview"><%= course.preview %></p>
-            <a href="/courses/<%= course.id %>" class="btn btn-success">Detail</a>
+            <p class="course_preview"><%= course.description %></p>
+            <p>Price $<%= course.price %></p>
         </div>
-        <% }) %>
     </div>
 </div>
 <%- include('layouts/footer.ejs') %>

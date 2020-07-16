@@ -21,5 +21,17 @@ exports.getCourses = (req, res, next) => {
       });
     })
     .catch((err) => console.log(err));
-  // res.render("courses", data);
+};
+
+exports.getCourseByID = (req, res, next) => {
+  const courseID = req.params.id;
+  console.log(courseID);
+  // Courses.fetchSingleCourse(courseID)
+  //   .then(([rows, fieldData]) => {
+  //     res.render("courseDetail", {
+  //       data: data,
+  //       course: rows,
+  //     });
+  //   })
+  //   .catch((err) => console.log(err));
 };
