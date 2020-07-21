@@ -5,6 +5,6 @@ module.exports = class Course {
     return db.execute("SELECT * FROM course");
   }
   static fetchSingleCourse(id) {
-    return "test";
+    return db.execute("SELECT * FROM course WHERE id=" + id);
   }
 };

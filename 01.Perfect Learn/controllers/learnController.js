@@ -1,22 +1,60 @@
 const Courses = require("../model/course");
 const data = require("../helper/data");
 exports.getHome = (req, res, next) => {
-  res.render("index", data);
+  res.render("index", {
+    title: "Perfect learning",
+    welcomeToEdu: "Loraem ipsum",
+    applyToAdmission: "Lorem ipsum 2",
+    research: "Lorem ipsum 3",
+    footerText: "Fotter text",
+    address: "Riven Riven",
+    phone: "092586221",
+    email: "abkcsd@fgdfg.com",
+    date: new Date().getFullYear(),
+  });
 };
 
 exports.getAbout = (req, res, next) => {
-  res.render("about", data);
+  res.render("about", {
+    title: "Perfect learning",
+    welcomeToEdu: "Loraem ipsum",
+    applyToAdmission: "Lorem ipsum 2",
+    research: "Lorem ipsum 3",
+    footerText: "Fotter text",
+    address: "Riven Riven",
+    phone: "092586221",
+    email: "abkcsd@fgdfg.com",
+    date: new Date().getFullYear(),
+  });
 };
 
 exports.getContact = (req, res, next) => {
-  res.render("contact", data);
+  res.render("contact", {
+    title: "Perfect learning",
+    welcomeToEdu: "Loraem ipsum",
+    applyToAdmission: "Lorem ipsum 2",
+    research: "Lorem ipsum 3",
+    footerText: "Fotter text",
+    address: "Riven Riven",
+    phone: "092586221",
+    email: "abkcsd@fgdfg.com",
+    date: new Date().getFullYear(),
+  });
 };
 
 exports.getCourses = (req, res, next) => {
   Courses.fetchAllCourses()
     .then(([rows, fieldData]) => {
       res.render("courses", {
-        data: data,
+        title: "Perfect learning",
+        welcomeToEdu: "Loraem ipsum",
+        applyToAdmission: "Lorem ipsum 2",
+        research: "Lorem ipsum 3",
+        footerText: "Fotter text",
+        address: "Riven Riven",
+        phone: "092586221",
+        email: "abkcsd@fgdfg.com",
+        date: new Date().getFullYear(),
         courses: rows,
       });
     })
@@ -25,13 +63,20 @@ exports.getCourses = (req, res, next) => {
 
 exports.getCourseByID = (req, res, next) => {
   const courseID = req.params.id;
-  console.log(courseID);
-  // Courses.fetchSingleCourse(courseID)
-  //   .then(([rows, fieldData]) => {
-  //     res.render("courseDetail", {
-  //       data: data,
-  //       course: rows,
-  //     });
-  //   })
-  //   .catch((err) => console.log(err));
+  Courses.fetchSingleCourse(courseID)
+    .then(([rows, fieldData]) => {
+      res.render("courseDetail", {
+        title: "Perfect learning",
+        welcomeToEdu: "Loraem ipsum",
+        applyToAdmission: "Lorem ipsum 2",
+        research: "Lorem ipsum 3",
+        footerText: "Fotter text",
+        address: "Riven Riven",
+        phone: "092586221",
+        email: "abkcsd@fgdfg.com",
+        date: new Date().getFullYear(),
+        course: rows[0],
+      });
+    })
+    .catch((err) => console.log(err));
 };

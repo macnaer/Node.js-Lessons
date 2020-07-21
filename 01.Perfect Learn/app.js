@@ -4,6 +4,11 @@ const path = require("path");
 
 const PORT = 8000;
 const app = express();
+
+//Routes middlewares
+const learnRoutes = require("./routes/learn");
+const adminRoutes = require("./routes/admin");
+
 // Controllers
 const errorController = require("./controllers/errorController");
 
@@ -16,9 +21,11 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "static")));
-//Routes middlewares
-const learnRoutes = require("./routes/learn");
 
+app.use("/courses", express.static(path.join(__dirname, "static")));
+app.use("/admin/courses", express.static(path.join(__dirname, "static")));
+
+app.use("/admin", adminRoutes);
 app.use(learnRoutes);
 app.use(errorController.get404);
 
