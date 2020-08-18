@@ -1,5 +1,8 @@
 const Courses = require("../model/course");
 
+exports.addCourse = (req, res, next) => {
+  res.render("admin/add-course");
+};
 exports.getCourses = (req, res, next) => {
   Courses.fetchAllCourses()
     .then(([rows, fieldData]) => {

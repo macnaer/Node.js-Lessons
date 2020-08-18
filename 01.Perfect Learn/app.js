@@ -27,6 +27,7 @@ app.use(express.static(path.join(__dirname, "static")));
 
 app.use("/courses", express.static(path.join(__dirname, "static")));
 app.use("/admin/courses", express.static(path.join(__dirname, "static")));
+app.use("/admin/add-course", express.static(path.join(__dirname, "static")));
 
 app.use("/admin", adminRoutes);
 app.use(learnRoutes);
@@ -35,7 +36,7 @@ app.use(errorController.get404);
 sequalize
   .sync()
   .then((result) => {
-    console.log("Sync result:", result);
+    // console.log("Sync result:", result);
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch((err) => console.log(err));
