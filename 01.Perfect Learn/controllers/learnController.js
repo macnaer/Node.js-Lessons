@@ -1,4 +1,4 @@
-const Courses = require("../model/course");
+const Course = require("../model/course");
 const data = require("../helper/data");
 exports.getHome = (req, res, next) => {
   res.render("index", {
@@ -43,8 +43,9 @@ exports.getContact = (req, res, next) => {
 };
 
 exports.getCourses = (req, res, next) => {
-  Courses.fetchAllCourses()
-    .then(([rows, fieldData]) => {
+  Course.findAll()
+    .then((curses) => {
+      console.log(curses);
       res.render("courses", {
         title: "Perfect learning",
         welcomeToEdu: "Loraem ipsum",
@@ -55,11 +56,30 @@ exports.getCourses = (req, res, next) => {
         phone: "092586221",
         email: "abkcsd@fgdfg.com",
         date: new Date().getFullYear(),
-        courses: rows,
+        courses: curses,
       });
     })
     .catch((err) => console.log(err));
 };
+
+// exports.getCourses = (req, res, next) => {
+//   Course.findAll()
+//     .then(([rows, fieldData]) => {
+//       res.render("courses", {
+//         title: "Perfect learning",
+//         welcomeToEdu: "Loraem ipsum",
+//         applyToAdmission: "Lorem ipsum 2",
+//         research: "Lorem ipsum 3",
+//         footerText: "Fotter text",
+//         address: "Riven Riven",
+//         phone: "092586221",
+//         email: "abkcsd@fgdfg.com",
+//         date: new Date().getFullYear(),
+//         courses: rows,
+//       });
+//     })
+//     .catch((err) => console.log(err));
+// };
 
 exports.getCourseByID = (req, res, next) => {
   const courseID = req.params.id;

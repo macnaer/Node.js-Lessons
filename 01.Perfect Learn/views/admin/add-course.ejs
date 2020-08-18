@@ -1,8 +1,73 @@
-<%- include('../layouts/head.ejs') %>
-<%- include('../layouts/internal-banner.ejs') %>
+<%- include('../layouts/head.ejs') %> <%-
+include('../layouts/internal-banner.ejs') %>
 <div class="container">
-    <div class="row mb-4">
-        Add new course
+  <div class="row mb-4 mt-4">
+    <div class="col">
+      <form method="POST" action="/admin/add-course">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            aria-describedby="title"
+            name="title"
+            placeholder="Title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="preview">Preview</label>
+          <textarea
+            class="form-control"
+            id="preview"
+            name="preview"
+            placeholder="Preview"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="course_program">Course program</label>
+          <textarea
+            class="form-control"
+            id="preview"
+            name="course_program"
+            placeholder="Course program"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            placeholder="Description"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            aria-describedby="image"
+            name="image"
+            placeholder="Image path"
+          />
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input
+            type="number"
+            min="0"
+            class="form-control"
+            id="price"
+            aria-describedby="price"
+            name="price"
+            placeholder="Price"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
     </div>
+  </div>
 </div>
 <%- include('../layouts/footer.ejs') %>
