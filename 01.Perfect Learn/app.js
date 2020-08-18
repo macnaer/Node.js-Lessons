@@ -2,6 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+// Include sequalize
+const sequalize = require("./helper/database");
+
 const PORT = 8000;
 const app = express();
 
@@ -29,4 +32,10 @@ app.use("/admin", adminRoutes);
 app.use(learnRoutes);
 app.use(errorController.get404);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+sequalize
+  .sync()
+  .then((result) => {
+    console.log("Sync result:", result);
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  })
+  .catch((err) => console.log(err));

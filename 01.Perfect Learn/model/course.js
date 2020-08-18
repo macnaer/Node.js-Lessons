@@ -1,10 +1,37 @@
-const db = require("../helper/database");
+const Sequalize = require("sequelize");
+const sequelize = require("../helper/database");
 
-module.exports = class Course {
-  static fetchAllCourses() {
-    return db.execute("SELECT * FROM course");
-  }
-  static fetchSingleCourse(id) {
-    return db.execute("SELECT * FROM course WHERE id=" + id);
-  }
-};
+const Course = sequelize.define("course", {
+  id: {
+    type: Sequalize.INTEGER,
+    autoIncrement: true,
+    allowNull: false,
+    primaryKey: true,
+  },
+  title: {
+    type: Sequalize.STRING,
+    allowNull: false,
+  },
+  preview: {
+    type: Sequalize.STRING,
+    allowNull: false,
+  },
+  course_program: {
+    type: Sequalize.TEXT,
+    allowNull: false,
+  },
+  image: {
+    type: Sequalize.STRING,
+    allowNull: false,
+  },
+  description: {
+    type: Sequalize.TEXT,
+    allowNull: false,
+  },
+  price: {
+    type: Sequalize.DOUBLE,
+    allowNull: false,
+  },
+});
+
+module.exports = Course;
