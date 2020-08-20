@@ -81,11 +81,31 @@ exports.getCourses = (req, res, next) => {
 //     .catch((err) => console.log(err));
 // };
 
+// exports.getCourseByID = (req, res, next) => {
+//   const courseID = req.params.id;
+//   Courses.fetchSingleCourse(courseID)
+//     .then(([rows, fieldData]) => {
+//       res.render("courseDetail", {
+//         title: "Perfect learning",
+//         welcomeToEdu: "Loraem ipsum",
+//         applyToAdmission: "Lorem ipsum 2",
+//         research: "Lorem ipsum 3",
+//         footerText: "Fotter text",
+//         address: "Riven Riven",
+//         phone: "092586221",
+//         email: "abkcsd@fgdfg.com",
+//         date: new Date().getFullYear(),
+//         course: rows[0],
+//       });
+//     })
+//     .catch((err) => console.log(err));
+// };
+
 exports.getCourseByID = (req, res, next) => {
   const courseID = req.params.id;
-  Courses.fetchSingleCourse(courseID)
-    .then(([rows, fieldData]) => {
-      res.render("courseDetail", {
+  Course.findByPk(courseID).then((course) => {
+    res
+      .render("courseDetail", {
         title: "Perfect learning",
         welcomeToEdu: "Loraem ipsum",
         applyToAdmission: "Lorem ipsum 2",
@@ -95,8 +115,8 @@ exports.getCourseByID = (req, res, next) => {
         phone: "092586221",
         email: "abkcsd@fgdfg.com",
         date: new Date().getFullYear(),
-        course: rows[0],
-      });
-    })
-    .catch((err) => console.log(err));
+        course: course,
+      })
+      .catch((err) => console.log(err));
+  });
 };

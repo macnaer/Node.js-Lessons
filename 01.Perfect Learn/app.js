@@ -16,7 +16,7 @@ const adminRoutes = require("./routes/admin");
 const errorController = require("./controllers/errorController");
 
 // Database
-const db = require("./helper/database");
+// const db = require("./helper/database");
 
 // Middleware
 //app.set("view engine", "pug");

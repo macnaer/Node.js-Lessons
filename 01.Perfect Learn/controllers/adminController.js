@@ -50,7 +50,7 @@ exports.getCourses = (req, res, next) => {
   Course.findAll()
     .then((curses) => {
       // console.log(curses);
-      res.render("courses", {
+      res.render("admin/courses", {
         title: "Perfect learning",
         welcomeToEdu: "Loraem ipsum",
         applyToAdmission: "Lorem ipsum 2",
@@ -62,6 +62,19 @@ exports.getCourses = (req, res, next) => {
         date: new Date().getFullYear(),
         courses: curses,
       });
+    })
+    .catch((err) => console.log(err));
+};
+
+exports.deleteCourse = (req, res, next) => {
+  const courseID = req.params.id;
+  Course.findByPk(courseID)
+    .then((course) => {
+      return course.destroy();
+    })
+    .then((result) => {
+      console.log("Course deleted");
+      res.redirect("/admin/courses");
     })
     .catch((err) => console.log(err));
 };
